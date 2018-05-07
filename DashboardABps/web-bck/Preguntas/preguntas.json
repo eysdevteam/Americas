@@ -1,0 +1,17 @@
+ [
+        {"seccion":"Sección 1","valor":[1],"preguntas": ["pregunta1"]},
+        {"seccion":"Sección 1","valor":[5],"preguntas": ["pregunta2"]},
+        {"seccion":"Sección 1","valor":[5],"preguntas": ["pregunta3"]},
+        {"seccion":"Sección 1","valor":[3],"preguntas": ["pregunta5"]},
+        {"seccion":"Sección 1","valor":[3],"preguntas": ["pregunta4","pregunta6","pregunta7","pregunta8","pregunta9"]},
+        {"seccion":"Sección 2","valor":[3],"preguntas": ["pregunta1","pregunta2","pregunta3","pregunta4","pregunta5"]},
+        {"seccion":"Sección 2","valor":[3],"preguntas": ["pregunta6","pregunta7","pregunta8","pregunta9"]},
+        {"seccion":"Sección 2","valor":[3],"preguntas": ["pregunta10","pregunta11","pregunta12","pregunta13","pregunta14","pregunta15"]},
+        {"seccion":"Sección 2","valor":[3],"preguntas": ["pregunta16","pregunta17","pregunta18","pregunta19","pregunta20","pregunta21","pregunta22"]},
+        {"seccion":"Sección 2","valor":[3],"preguntas": ["pregunta23"]},
+        {"seccion":"Sección 3","valor":[3],"preguntas": ["pregunta1","pregunta2","pregunta3","pregunta4","pregunta5"]},
+        {"seccion":"Sección 3","valor":[3],"preguntas": ["pregunta6"]},
+        {"seccion":"Sección 3","valor":[3],"preguntas": ["pregunta7","pregunta8","pregunta9","pregunta10","pregunta11"]},
+        {"seccion":"Sección 3","valor":[3],"preguntas": ["pregunta12","pregunta13","pregunta14","pregunta15","pregunta16","pregunta17","pregunta18"]},
+        {"seccion":"Sección 3","valor":[3],"preguntas": ["pregunta19","pregunta20","pregunta21","pregunta22","pregunta23","pregunta24","pregunta25","pregunta26"]}
+      ]

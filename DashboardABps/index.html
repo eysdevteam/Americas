@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+     <head>
+	  <title></title>
+          <meta charset="utf-8">
+          <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+          <!-- Import CSS Style -->
+          <link rel="stylesheet" type="text/css" href="css/custom.css"> 
+          <!-- Import D3.js -->
+          <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+          <!-- Import Bootstrap -->
+          <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">  
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          <!-- Import AngularJS -->
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
+          <!-- Import AngularJS Module -->
+          <script src="js/app.js"></script>
+          <script src="js/directives.js"></script>
+          <!-- Import AngularJS Controllers -->
+          <script src="js/controllers.js"></script>
+          <!-- Import D3.js Library -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+     </head>
+     <body style="background-color: #EDECEC" ng-app="galatea">
+
+          <!-- Container Fluid Sin PADDING -->
+          <div class="container-fluid p-0 m-0">
+
+               <!-- Primer Fila con Margin 2 -->
+               <div class="row no-gutters ml-1 mr-1">
+                    <!-- Definición de Columnas..., Extensión de md-3 y col-12 para la mínima resolución -->
+
+                    <div class="col-md-3 mt-1 pr-1">
+                         <div class="row no gutters ml-1 mr-1 mb-1">
+                              <div class="col-12 rounded bg-white text-center pt-2 pb-2">
+                                   <img src="PRO_PRINCIPAL_HORZ_PNG.png" height="41px"></img>
+                              </div>
+                         </div>
+                         <div class="row no gutters ml-1 mr-1 ">
+                              <div class="col-12 rounded bg-white" ng-controller="TabsController as tabs">
+                                   <div class="title row no-gutters title">
+                                        Estado de Madurez por Pregunta
+                                   </div>
+                                   <nav class="navbar navbar-expand-sm navbar-fixed-top justify-content-center pb-1">
+                                     <!-- Links -->
+                                        <ul class="navbar-nav nav-tabs nav-justified">   
+                                             <li class="nav-item" ng-class="{active:tabs.tab===1}">
+                                                 <a ng-click="tabs.selectTab(1)" class="btn">Sección 1</a>
+                                             </li>
+                                             <li class="nav-item" ng-class="{active:tabs.tab===2}">
+                                                  <a ng-click="tabs.selectTab(2)" class="btn">Sección 2</a>
+                                             </li>
+                                             <li class="nav-item" ng-class="{active:tabs.tab===3}">
+                                                  <a ng-click="tabs.selectTab(3)" class="btn">Sección 3</a>
+                                             </li>
+                                        </ul>
+                                   </nav>
+                                   <div class="row no gutters ml-1 mr-1">
+                                        <div class="col-12 rounded bg-white">
+                                             <div ng-controller="Q_S1" id="Q_S1" ng-show="tabs.tab===1"></div>
+                                             <div ng-controller="Q_S2" id="Q_S2" ng-show="tabs.tab===2"></div>
+                                             <div ng-controller="Q_S3" id="Q_S3" ng-show="tabs.tab===3"></div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>                         
+                    </div>
+                    
+                    <div class="col-md-9 mt-1 pl-1 pr-1">
+                         <div class="rounded bg-white">
+                              <div class="title row no-gutters title_main mb-2">
+                                   Estado General de Madurez en Gestión de Datos e Información
+                              </div>
+                              <div class="row no-gutters">
+                                   <div class="col-9 text-center">
+                                        <div ng-controller="EGMGDI_bullet" id="EGMGDI_bullet"></div>
+                                   </div>
+                                   <div class="col-3 text-center">
+                                        <div ng-controller="EGMGDI_donut" id="EGMGDI_donut"></div>
+                                   </div>                                   
+                              </div>
+                         </div>
+                    </div>                    
+               </div>
+
+               <!-- Segunda Fila con Margin 2 -->
+               <div class="row no-gutters ml-2 mr-2">
+                    <div class="col-5 mt-1 pl-1 pr-1 bg-white rounded-left">
+                         <div class="title row no-gutters">
+                              <div class="col-12">
+                                 Gerencias  
+                              </div>                              
+                         </div>
+                         <div class="row no-gutters">
+                              <div class="col-3 text-center">
+                                   <div ng-controller="V_donut" id="V_donut"></div>    
+                              </div>
+                              <div class="col-9 text-center">
+                                   <div ng-controller="V_bullet" id="V_bullet"></div> 
+                              </div>                                   
+                         </div>
+                    </div>
+                    <div class="col-2 mt-1 pt-4 bg-white d-flex justify-content-center font">
+                         <table>
+                              <tbody class="pt-2">
+                                   <tr><td class="pt-2">Sección 1</td></tr>
+                                   <tr><td class="pt-3">Sección 2</td></tr>
+                                   <tr><td class="pt-3">Sección 3</td></tr>
+                              </tbody>
+                         </table>
+                    </div>
+                    <div class="col-5 mt-1 pl-1 pr-1 bg-white rounded-right">
+                         <div class="title row no-gutters">
+                              <div class="col-12 text-right">
+                                 Directores  
+                              </div>                              
+                         </div>
+                         <div class="row no-gutters">
+                              <div class="col-9 text-center">
+                                   <div ng-controller="JyL_bullet" id="JyL_bullet"></div>     
+                              </div>
+                              <div class="col-3 text-center">
+                                   <div ng-controller="JyL_donut" id="JyL_donut"></div>    
+                              </div>                                   
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Tercera Fila con Margin 2 -->
+               <div class="row no-gutters ml-2 mr-2">
+                    <div class="col-5 mt-1 pl-1 pr-1 bg-white rounded-left">
+                         <div class="title row no-gutters">
+                              <div class="col-12">
+                                 Jefes
+                              </div> 
+                         </div>
+                         <div class="row no-gutters">
+                              <div class="col-3 text-center">
+                                   <div ng-controller="ACN_donut" id="ACN_donut"></div>     
+                              </div>
+                              <div class="col-9 text-center">
+                                   <div ng-controller="ACN_bullet" id="ACN_bullet"></div>      
+                              </div>                                   
+                         </div>
+                    </div>
+                    <div class="col-2 mt-1 pt-4 bg-white d-flex justify-content-center font">
+                         <table>
+                              <tbody class="pt-2">
+                                   <tr><td class="pt-2">Sección 1</td></tr>
+                                   <tr><td class="pt-3">Sección 2</td></tr>
+                                   <tr><td class="pt-3">Sección 3</td></tr>
+                              </tbody>
+                         </table>
+                    </div>
+                    <div class="col-5 mt-1 pl-1 pr-1 bg-white rounded-right">
+                         <div class="title row no-gutters">
+                              <div class="col-12 text-right">
+                                 Analistas
+                              </div>
+                         </div>
+                         <div class="row no-gutters">
+                              <div class="col-9 text-center">
+                                   <div ng-controller="ACI_bullet" id="ACI_bullet"></div>          
+                              </div>
+                              <div class="col-3 text-center">
+                                   <div ng-controller="ACI_donut" id="ACI_donut"></div>
+                              </div>                                   
+                         </div>
+                    </div>
+               </div>
+               <!-- Button trigger modal -->
+               <div class="container1">
+                    
+               <!-- Modal -->
+                    <div class="modal fade" id="modalBullet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                         <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                   <div class="modal-header">
+                                        <h5 class="modal-title modal-title-bullet"></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                             <span aria-hidden="true">&times;</span>
+                                        </button>
+                                   </div>
+                                   <div class="modal_body modal-bullet pt-3 pr-4 pb-3 pl-4"></div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+               <footer class="row no-gutters ml-2 mr-2 mt-1">
+                    <div class="col-sm text-center bg-dark text-white pt-2 pb-2">
+                         <img src="logo-eys-blanco.png" height="25px"></img>
+                    </div>                             
+               </footer>
+          </div>
+
+          <script src="js/lib.d3.js"></script>
+
+     </body>
+
+</html>
